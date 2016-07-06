@@ -40,16 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Example.cs" />
+    <Compile Include="Models\Accounter.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Decorator.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\" />
     <Folder Include="Infrastructure\Constants\" />
     <Folder Include="Infrastructure\Enumerations\" />
     <Folder Include="Infrastructure\Exceptions\" />
     <Folder Include="Infrastructure\Utils\" />
     <Folder Include="Models\Common\Abstract\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

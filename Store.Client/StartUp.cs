@@ -6,11 +6,9 @@
 
 namespace Store.Client
 {
+    using Core.Contracts;
+    using Core.Models;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// The class StartUp holds the main starting point of our client.
@@ -22,6 +20,37 @@ namespace Store.Client
         /// </summary>
         public static void Main()
         {
+            IUser ivan = new Accounter(new User("Ivan", "123456", "pesho@abv.bg"));
+
+            Console.WriteLine(ivan is User);
+
+            Console.WriteLine(ivan is Customer);
+
+            Console.WriteLine(ivan is Accounter);
+
+            (ivan as Accounter).Customer.AddMoney(20);
+
+
+
+            //(ivan as Customer).AddMoney(20);
+
+
+            //IUser dragan = new Customer(ivan);
+
+            //(dragan as Customer).AddMoney(20);
+
+            //(dragan as Accounter).GetExpenses();
+
+            //IUser pesho = new Manager(dragan);
+
+
+            //(pesho as Manager).Test();
+
+            //(pesho as Customer).AddMoney(10);
+
+
+            //Console.WriteLine(pesho is Accounter);
+            //Console.WriteLine(pesho);
         }
     }
 }
