@@ -9,7 +9,7 @@ namespace Store.Client
     using Core.Contracts;
     using Core.Models;
     using System;
-
+    using System.Text;
     /// <summary>
     /// The class StartUp holds the main starting point of our client.
     /// </summary>
@@ -20,37 +20,52 @@ namespace Store.Client
         /// </summary>
         public static void Main()
         {
-            IUser ivan = new Accounter(new User("Ivan", "123456", "pesho@abv.bg"));
+            #region DrawMainMenu
+            var strBuilder = new StringBuilder();
 
-            Console.WriteLine(ivan is User);
+            strBuilder.AppendLine("                                                        ");
+            strBuilder.AppendLine(" -----------------------------------------------------  ");
+            strBuilder.AppendLine("|                                                     | ");
+            strBuilder.AppendLine("|    ******   *******    * * *      ****      *****   | ");
+            strBuilder.AppendLine("|   *            *      *     *     *   *     *       | ");
+            strBuilder.AppendLine("|    ******      *      *     *     *****     ****    | ");
+            strBuilder.AppendLine("|          *     *      *     *     *    *    *       | ");
+            strBuilder.AppendLine("|    ******      *       * * *      *     *   *****   | ");
+            strBuilder.AppendLine("|                                                     | ");
+            strBuilder.AppendLine(" -----------------------------------------------------  ");
+            strBuilder.AppendLine("                                                        ");
+            strBuilder.AppendLine("                M A I N - M E N U:                      ");
+            strBuilder.AppendLine("                                                        ");
+            strBuilder.AppendLine("                  1: Login                              ");
+            strBuilder.AppendLine("                  2: Register                           ");
+            strBuilder.AppendLine("                  3: Exit                               ");
 
-            Console.WriteLine(ivan is Customer);
+            var mainMenu = strBuilder.ToString();
+            strBuilder.Clear();
 
-            Console.WriteLine(ivan is Accounter);
+            #endregion
 
-            (ivan as Accounter).Customer.AddMoney(20);
+            while (true)
+            {
+                Console.WriteLine(mainMenu);
 
+                var input = Console.ReadKey();
+                Console.WriteLine();
 
-
-            //(ivan as Customer).AddMoney(20);
-
-
-            //IUser dragan = new Customer(ivan);
-
-            //(dragan as Customer).AddMoney(20);
-
-            //(dragan as Accounter).GetExpenses();
-
-            //IUser pesho = new Manager(dragan);
-
-
-            //(pesho as Manager).Test();
-
-            //(pesho as Customer).AddMoney(10);
-
-
-            //Console.WriteLine(pesho is Accounter);
-            //Console.WriteLine(pesho);
+                switch (input.Key)
+                {
+                    case ConsoleKey.Escape:
+                        break;
+                    case ConsoleKey.D1:
+                        break;
+                    case ConsoleKey.D2:
+                        break;
+                    case ConsoleKey.D3:
+                        Environment.Exit(0);
+                        break;
+                }
+                Console.Clear();
+            }
         }
     }
 }
