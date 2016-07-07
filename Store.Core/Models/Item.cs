@@ -79,11 +79,11 @@ namespace Store.Core.Models.Common
         /// <summary>
         /// Gets the price of the item/
         /// </summary>
-        public string Price
+        public decimal Price
         {
             get
             {
-                return this.Price;
+                return this.price;
             }
         }
 

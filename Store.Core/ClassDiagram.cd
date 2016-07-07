@@ -18,6 +18,14 @@
   </Class>
   <Class Name="Store.Core.Models.Users.Customer" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="Store.Core.Models.Users.Decorator" ManuallyRouted="true">
+      <Path>
+        <Point X="2.5" Y="2.062" />
+        <Point X="2.5" Y="2.375" />
+        <Point X="1.25" Y="2.375" />
+        <Point X="1.25" Y="2.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Users\Customer.cs</FileName>
@@ -70,7 +78,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Store.Core.Models.MainMenu" Collapsed="true">
-    <Position X="9.25" Y="1.5" Width="1.5" />
+    <Position X="7" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Models\MainMenu.cs</FileName>
@@ -78,7 +86,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Store.Core.Models.LoginMenu" Collapsed="true">
-    <Position X="8.25" Y="2.5" Width="1.5" />
+    <Position X="6" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Models\LoginMenu.cs</FileName>
@@ -86,10 +94,18 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Store.Core.Models.RegisterMenu" Collapsed="true">
-    <Position X="10.25" Y="2.5" Width="1.5" />
+    <Position X="8" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Models\RegisterMenu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Core.Models.StoreMenu" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAgAAAAgAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\StoreMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -108,7 +124,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Store.Core.Contracts.IMenu" Collapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IMenu.cs</FileName>

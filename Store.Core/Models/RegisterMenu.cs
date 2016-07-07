@@ -54,7 +54,7 @@
             if (key == ConsoleKey.D3)
                 return StateType.Register;
             if (key == ConsoleKey.D4)
-                return StateType.GoBack;
+                return StateType.MainMenu;
 
             return StateType.NotSet;
         }
