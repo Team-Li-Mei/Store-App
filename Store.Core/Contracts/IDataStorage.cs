@@ -4,9 +4,9 @@
     {
         void Create();
 
-        void Read();
+        void Write(string text);
 
-        void Update();
+        string Read(int id);
 
         void Delete();
     }

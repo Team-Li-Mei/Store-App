@@ -4,5 +4,6 @@
     {
         public const int consoleWindowWidth = 90;
         public const int consoleWindowHeight = 25;
+        public const string storageFileExtensionName = ".txt";
     }
 }
