@@ -48,6 +48,7 @@
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
+    <Compile Include="Infrastructure\Utils\Validator.cs" />
     <Compile Include="Models\LoginMenu.cs" />
     <Compile Include="Models\MainMenu.cs" />
     <Compile Include="Models\RegisterMenu.cs" />
@@ -62,7 +63,6 @@
   <ItemGroup>
     <Folder Include="Infrastructure\Constants\" />
     <Folder Include="Infrastructure\Exceptions\" />
-    <Folder Include="Infrastructure\Utils\" />
     <Folder Include="Models\Common\Abstract\" />
   </ItemGroup>
   <ItemGroup>
