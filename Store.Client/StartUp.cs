@@ -54,8 +54,8 @@ namespace Store.Client
                         state = StoreMenu.Instance(collection).ParseKey(Console.ReadKey().Key);
                         break;
                     case StateType.CartMenu:
-                        StoreMenu.Instance(collection).Draw();
-                        state = StoreMenu.Instance(collection).ParseKey(Console.ReadKey().Key);
+                        CartMenu.Instance.Draw();
+                        state = CartMenu.Instance.ParseKey(Console.ReadKey().Key);
                         break;
                     default:
                         break;
