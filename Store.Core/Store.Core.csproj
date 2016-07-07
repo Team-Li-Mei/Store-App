@@ -49,8 +49,10 @@
     <Compile Include="Example.cs" />
     <Compile Include="Infrastructure\Constants\Constants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
+    <Compile Include="Models\CartMenu.cs" />
     <Compile Include="Models\LoginMenu.cs" />
     <Compile Include="Models\MainMenu.cs" />
+    <Compile Include="Models\PaymentMenu.cs" />
     <Compile Include="Models\RegisterMenu.cs" />
     <Compile Include="Models\StoreMenu.cs" />
     <Compile Include="Models\Users\Accounter.cs" />

@@ -40,7 +40,7 @@
             strBuilder.AppendLine("                                             ");
             strBuilder.AppendLine("             1: .                            ");
             strBuilder.AppendLine("             2: .                            ");
-            strBuilder.AppendLine("             3: .                            ");
+            strBuilder.AppendLine("             3: Pay.                         ");
             strBuilder.AppendLine("             4: Go back.                     ");
 
             Console.WriteLine(strBuilder.ToString());
@@ -53,7 +53,7 @@
             if (key == ConsoleKey.D2)
                 return StateType.NotSet;
             if (key == ConsoleKey.D3)
-                return StateType.NotSet;
+                return StateType.PaymentMenu;
             if (key == ConsoleKey.D4)
                 return StateType.StoreMenu;
 

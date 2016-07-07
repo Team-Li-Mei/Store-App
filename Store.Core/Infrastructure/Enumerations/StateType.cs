@@ -7,8 +7,8 @@
         RegisterMenu,
         StoreMenu,
         CartMenu,
-        GoBack,
-        //Login Actions
+        PaymentMenu,
+        //Actions
         EnterUsername,
         EnterPassword,
         Login,
