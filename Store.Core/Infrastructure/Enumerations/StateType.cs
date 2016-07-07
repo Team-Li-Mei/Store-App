@@ -14,6 +14,7 @@
         EnterEmail,
         Login,
         Register,
+        //Default value
         NotSet
     }
 }

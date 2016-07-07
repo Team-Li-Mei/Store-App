@@ -73,7 +73,7 @@ namespace Store.Client
                     case StateType.EnterPassword:
                         password = Console.ReadLine();
                         //validation
-                        state = StateType.RegisterMenu;
+                        state = StateType.RegisterMenu;// need states
                         break;
                     case StateType.EnterEmail:
                         email = Console.ReadLine();
