@@ -28,22 +28,22 @@
         {
             var strBuilder = new StringBuilder();
 
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine("|    ******   *******    * * *      ****      *****   | ");
-            strBuilder.AppendLine("|   *            *      *     *     *   *     *       | ");
-            strBuilder.AppendLine("|    ******      *      *     *     *****     ****    | ");
-            strBuilder.AppendLine("|          *     *      *     *     *    *    *       | ");
-            strBuilder.AppendLine("|    ******      *       * * *      *     *   *****   | ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("                M A I N - M E N U:                      ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("                  1: Login - menu.                      ");
-            strBuilder.AppendLine("                  2: Register - menu.                   ");
-            strBuilder.AppendLine("                  3: Exit.                              ");
+            strBuilder.AppendLine("                                                                                        ");
+            strBuilder.AppendLine(" -------------------------------------------------------------------------------------  ");
+            strBuilder.AppendLine("|                                                                                     | ");
+            strBuilder.AppendLine("|   *           *    *****    *          * * *     * * *         *    *        *****  | ");
+            strBuilder.AppendLine("|    *         *     *        *         *         *     *       *  * * *       *      | ");
+            strBuilder.AppendLine("|     *   *   *      ****     *         *         *     *      *    *   *      ****   | ");
+            strBuilder.AppendLine("|      * * * *       *        *         *         *     *     *          *     *      | ");
+            strBuilder.AppendLine("|       *   *        *****    *******    * * *     * * *     *            *    *****  | ");
+            strBuilder.AppendLine("|                                                                                     | ");
+            strBuilder.AppendLine(" -------------------------------------------------------------------------------------  ");
+            strBuilder.AppendLine("                                                                                        ");
+            strBuilder.AppendLine("                                 M A I N - M E N U:                                     ");
+            strBuilder.AppendLine("                                                                                        ");
+            strBuilder.AppendLine("                                   1: Login - menu.                                     ");
+            strBuilder.AppendLine("                                   2: Register - menu.                                  ");
+            strBuilder.AppendLine("                                   3: Exit.                                             ");
 
             Console.WriteLine(strBuilder.ToString());
         }

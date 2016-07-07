@@ -6,9 +6,13 @@
 
 namespace Store.Client
 {
+    using Core.Infrastructure.Constants;
     using Core.Infrastructure.Enumerations;
     using Core.Models;
+    using Core.Models.Common;
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     /// <summary>
     /// The class StartUp holds the main starting point of our client.
@@ -20,6 +24,14 @@ namespace Store.Client
         /// </summary>
         public static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+           
+            Console.SetWindowSize(Constants.consoleWindowWidth, Constants.consoleWindowHeight);
+
+            var collection = new List<Item>();
+            collection.Add(new Item("Apples", 22.5m, DateTime.Now, 245));
+            collection.Add(new Item("Pears", 35.5m, DateTime.Now, 50));
+
             StateType state = StateType.MainMenu;
             while (true)
             {
@@ -32,18 +44,23 @@ namespace Store.Client
                     case StateType.LoginMenu:
                         LoginMenu.Instance.Draw();
                         state = LoginMenu.Instance.ParseKey(Console.ReadKey().Key);
-                        //if state == statetype.bla 
-                        //do this
                         break;
                     case StateType.RegisterMenu:
                         RegisterMenu.Instance.Draw();
                         state = RegisterMenu.Instance.ParseKey(Console.ReadKey().Key);
                         break;
+                    case StateType.StoreMenu:
+                        StoreMenu.Instance(collection).Draw();
+                        state = StoreMenu.Instance(collection).ParseKey(Console.ReadKey().Key);
+                        break;
+                    case StateType.CartMenu:
+                        StoreMenu.Instance(collection).Draw();
+                        state = StoreMenu.Instance(collection).ParseKey(Console.ReadKey().Key);
+                        break;
                     default:
                         break;
                 }
 
-                Console.WriteLine();
                 Console.Clear();
             }
         }
