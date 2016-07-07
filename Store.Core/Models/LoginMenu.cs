@@ -20,27 +20,28 @@
                 return instance;
             }
         }
+
         public void Draw()
         {
             var strBuilder = new StringBuilder();
 
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine("|   *          * * *     * * *     *    *      *      | ");
-            strBuilder.AppendLine("|   *         *     *   *          *    * *    *      | ");
-            strBuilder.AppendLine("|   *         *     *   *   * *    *    *  *   *      | ");
-            strBuilder.AppendLine("|   *         *     *   *     *    *    *   *  *      | ");
-            strBuilder.AppendLine("|   *******    * * *     * * *     *    *    * *      | ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("              L O G I N - M E N U:                      ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("                  1: Enter username.                    ");
-            strBuilder.AppendLine("                  2: Enter password.                    ");
-            strBuilder.AppendLine("                  3: Login.                             ");
-            strBuilder.AppendLine("                  4: Go back.                           ");
+            strBuilder.AppendLine("                                                       ");
+            strBuilder.AppendLine(" ----------------------------------------------------- ");
+            strBuilder.AppendLine("|                                                     |");
+            strBuilder.AppendLine("|   *          * * *     * * *     *    *      *      |");
+            strBuilder.AppendLine("|   *         *     *   *          *    * *    *      |");
+            strBuilder.AppendLine("|   *         *     *   *   * *    *    *  *   *      |");
+            strBuilder.AppendLine("|   *         *     *   *     *    *    *   *  *      |");
+            strBuilder.AppendLine("|   *******    * * *     * * *     *    *    * *      |");
+            strBuilder.AppendLine("|                                                     |");
+            strBuilder.AppendLine(" ----------------------------------------------------- ");
+            strBuilder.AppendLine("                                                       ");
+            strBuilder.AppendLine("              L O G I N - M E N U:                     ");
+            strBuilder.AppendLine("                                                       ");
+            strBuilder.AppendLine("                  1: Enter username.                   ");
+            strBuilder.AppendLine("                  2: Enter password.                   ");
+            strBuilder.AppendLine("                  3: Login.                            ");
+            strBuilder.AppendLine("                  4: Go back.                          ");
 
             Console.WriteLine(strBuilder.ToString());
         }

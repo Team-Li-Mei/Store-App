@@ -132,6 +132,13 @@
       <FileName>Infrastructure\Constants\Constants.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Store.Core.Infrastructure.Utils.Validator" Collapsed="true">
+    <Position X="4.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAQAA=</HashCode>
+      <FileName>Infrastructure\Utils\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="Store.Core.Models.Common.Item" Collapsed="true">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>

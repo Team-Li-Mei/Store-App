@@ -11,6 +11,7 @@
         //Actions
         EnterUsername,
         EnterPassword,
+        EnterEmail,
         Login,
         Register,
         NotSet

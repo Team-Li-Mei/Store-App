@@ -20,6 +20,7 @@
                 return instance;
             }
         }
+
         public void Draw()
         {
             var strBuilder = new StringBuilder();
@@ -39,8 +40,9 @@
             strBuilder.AppendLine("                                                                            ");
             strBuilder.AppendLine("                       1: Enter username.                                   ");
             strBuilder.AppendLine("                       2: Enter password.                                   ");
-            strBuilder.AppendLine("                       3: Register.                                         ");
-            strBuilder.AppendLine("                       4: Go back.                                          ");
+            strBuilder.AppendLine("                       3: Enter email.                                      ");
+            strBuilder.AppendLine("                       4: Register.                                         ");
+            strBuilder.AppendLine("                       5: Go back.                                          ");
 
             Console.WriteLine(strBuilder.ToString());
         }
@@ -52,8 +54,10 @@
             if (key == ConsoleKey.D2)
                 return StateType.EnterPassword;
             if (key == ConsoleKey.D3)
-                return StateType.Register;
+                return StateType.EnterEmail;
             if (key == ConsoleKey.D4)
+                return StateType.Register;
+            if (key == ConsoleKey.D5)
                 return StateType.MainMenu;
 
             return StateType.NotSet;
