@@ -50,6 +50,7 @@
     <Compile Include="Infrastructure\Constants\Constants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
     <Compile Include="Models\CartMenu.cs" />
+    <Compile Include="Infrastructure\Utils\Validator.cs" />
     <Compile Include="Models\LoginMenu.cs" />
     <Compile Include="Models\MainMenu.cs" />
     <Compile Include="Models\PaymentMenu.cs" />
@@ -65,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\Exceptions\" />
-    <Folder Include="Infrastructure\Utils\" />
     <Folder Include="Models\Common\Abstract\" />
   </ItemGroup>
   <ItemGroup>
