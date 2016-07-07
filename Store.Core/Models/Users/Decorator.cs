@@ -1,9 +1,8 @@
-﻿using Store.Core.Contracts;
-using System;
-using Store.Core.Models.Common;
-
-namespace Store.Core.Models
+﻿namespace Store.Core.Models.Users
 {
+    using Contracts;
+    using Common;
+
     public abstract class Decorator : IUser
     {
         protected IUser user;

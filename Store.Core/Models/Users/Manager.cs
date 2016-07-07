@@ -1,4 +1,4 @@
-﻿namespace Store.Core.Models
+﻿namespace Store.Core.Models.Users
 {
     using Contracts;
     using System;

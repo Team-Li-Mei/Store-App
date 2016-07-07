@@ -31,7 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,19 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IMenu.cs" />
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Example.cs" />
-    <Compile Include="Models\Accounter.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Decorator.cs" />
+    <Compile Include="Infrastructure\Enumerations\StateType.cs" />
+    <Compile Include="Models\LoginMenu.cs" />
+    <Compile Include="Models\MainMenu.cs" />
+    <Compile Include="Models\RegisterMenu.cs" />
+    <Compile Include="Models\Users\Accounter.cs" />
+    <Compile Include="Models\Users\Customer.cs" />
+    <Compile Include="Models\Users\Decorator.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\Manager.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Users\Manager.cs" />
+    <Compile Include="Models\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\Constants\" />
-    <Folder Include="Infrastructure\Enumerations\" />
     <Folder Include="Infrastructure\Exceptions\" />
     <Folder Include="Infrastructure\Utils\" />
     <Folder Include="Models\Common\Abstract\" />

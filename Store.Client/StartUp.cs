@@ -6,10 +6,10 @@
 
 namespace Store.Client
 {
-    using Core.Contracts;
+    using Core.Infrastructure.Enumerations;
     using Core.Models;
     using System;
-    using System.Text;
+
     /// <summary>
     /// The class StartUp holds the main starting point of our client.
     /// </summary>
@@ -20,50 +20,30 @@ namespace Store.Client
         /// </summary>
         public static void Main()
         {
-            #region DrawMainMenu
-            var strBuilder = new StringBuilder();
-
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine("|    ******   *******    * * *      ****      *****   | ");
-            strBuilder.AppendLine("|   *            *      *     *     *   *     *       | ");
-            strBuilder.AppendLine("|    ******      *      *     *     *****     ****    | ");
-            strBuilder.AppendLine("|          *     *      *     *     *    *    *       | ");
-            strBuilder.AppendLine("|    ******      *       * * *      *     *   *****   | ");
-            strBuilder.AppendLine("|                                                     | ");
-            strBuilder.AppendLine(" -----------------------------------------------------  ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("                M A I N - M E N U:                      ");
-            strBuilder.AppendLine("                                                        ");
-            strBuilder.AppendLine("                  1: Login                              ");
-            strBuilder.AppendLine("                  2: Register                           ");
-            strBuilder.AppendLine("                  3: Exit                               ");
-
-            var mainMenu = strBuilder.ToString();
-            strBuilder.Clear();
-
-            #endregion
-
+            StateType state = StateType.MainMenu;
             while (true)
             {
-                Console.WriteLine(mainMenu);
-
-                var input = Console.ReadKey();
-                Console.WriteLine();
-
-                switch (input.Key)
+                switch (state)
                 {
-                    case ConsoleKey.Escape:
+                    case StateType.MainMenu:
+                        MainMenu.Instance.Draw();
+                        state = MainMenu.Instance.ParseKey(Console.ReadKey().Key);
                         break;
-                    case ConsoleKey.D1:
+                    case StateType.LoginMenu:
+                        LoginMenu.Instance.Draw();
+                        state = LoginMenu.Instance.ParseKey(Console.ReadKey().Key);
+                        //if state == statetype.bla 
+                        //do this
                         break;
-                    case ConsoleKey.D2:
+                    case StateType.RegisterMenu:
+                        RegisterMenu.Instance.Draw();
+                        state = RegisterMenu.Instance.ParseKey(Console.ReadKey().Key);
                         break;
-                    case ConsoleKey.D3:
-                        Environment.Exit(0);
+                    default:
                         break;
                 }
+
+                Console.WriteLine();
                 Console.Clear();
             }
         }
