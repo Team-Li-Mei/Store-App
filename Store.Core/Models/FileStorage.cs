@@ -18,7 +18,7 @@
             //Assign FileName
             this.FileName = setFileName;
             //Assign filePath to the current directory/fileName.storageFileExtensionName
-            this.filePath = Directory.GetCurrentDirectory() + FileName + Constants.storageFileExtensionName;
+            this.filePath = FileName + Constants.storageFileExtensionName;
             //Create the file which will hold our data
             this.Create();
         }
@@ -27,16 +27,16 @@
         {
             get { return this.fileName; }
             //validation
-            private set { this.fileName = FileName; }
+            private set { this.fileName = value; }
         }
 
-        public void Create() => File.Create(filePath);
+        public void Create() => File.Create(filePath).Close();
 
         public void Delete() => File.Delete(filePath);
 
         public string Read(int id)
         {
-            using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open), Encoding.UTF8))
+            using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
                 for (int i = 0; i < id; i++)
                 {
@@ -48,7 +48,7 @@
 
         public string Read()
         {
-            using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open), Encoding.UTF8))
+            using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
                 return strReader.ReadToEnd();
             }
@@ -56,7 +56,7 @@
 
         public void Write(string text)
         {
-            using (var strWriter = new StreamWriter(new FileStream(filePath, FileMode.Open), Encoding.UTF8))
+            using (var strWriter = new StreamWriter(new FileStream(filePath, FileMode.Open, FileAccess.Write), Encoding.UTF8))
             {
                 strWriter.WriteLine(text);
             }

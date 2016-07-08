@@ -12,3 +12,5 @@
 **The project** we chose to implement is a store inventory application, which will keep track of a groceries store’s inventory. We will have different **program behavior**, based on the role of the person that has logged in. There will be different ***classes*** and ***subclasses*** of products, with respective ***names***, ***price***, ***quantities*** etc. Quantities in the warehouse will be monitored.
 
 **We** are intending to implement a ***shopping cart*** interface, aiming to extend the program into a full-fledged online store.
+
+![alt tag](http://i64.tinypic.com/2uglbu8.png)

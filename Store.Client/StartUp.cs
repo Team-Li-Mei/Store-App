@@ -34,10 +34,10 @@ namespace Store.Client
             var collection = new List<IProduct>();
             collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 245, 32.1));
             collection.Add(new Dairy("Yougurt", 35.5m, DateTime.Now, 50, 5));
-           
+
             string username = null;
             string password = null;
-            string email = null;   
+            string email = null;
 
             StateType state = StateType.MainMenu;
             while (true)
@@ -90,7 +90,8 @@ namespace Store.Client
                         Validator.CheckIfStringIsNullOrEmpty(email);
 
                         //Write to file
-                        var userContext = new FileStorage("Users");
+                        var userContext = DataStorageFactory.CreateDbContext("Users");
+                        //not good using new
                         userContext.Write(new Admin(username, password, email).ToString());
 
                         //Switch state

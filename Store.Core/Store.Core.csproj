@@ -49,9 +49,9 @@
     <Compile Include="Contracts\IMenu.cs" />
     <Compile Include="Contracts\IProduct.cs" />
     <Compile Include="Contracts\IUser.cs" />
-    <Compile Include="Example.cs" />
     <Compile Include="Infrastructure\Constants\Constants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
+    <Compile Include="Models\DataStorageFactory.cs" />
     <Compile Include="Models\Menus\CartMenu.cs" />
     <Compile Include="Infrastructure\Utils\Validator.cs" />
     <Compile Include="Models\Products\Abstract\Consumable.cs" />
