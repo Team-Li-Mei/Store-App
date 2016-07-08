@@ -1,4 +1,4 @@
-﻿using Store.Core.Models.Common;
+﻿using Store.Core.Models;
 
 namespace Store.Core.Contracts
 {
@@ -7,16 +7,18 @@ namespace Store.Core.Contracts
     /// </summary>
     public interface IUser
     {
-        //string Id { get; }
+        string Id { get; }
 
-        //string Email { get; }
+        string Email { get; }
 
-        //string Password { get; }
+        string Password { get; }
 
-        //string Username { get; }
+        string Username { get; }
 
-        void AddItem(Item item);
+        Wallet Wallet { get; }
 
-        void RemoveItem(Item item);
+        void AddItem(IProduct product);
+
+        void RemoveItem(IProduct product);
     }
 }

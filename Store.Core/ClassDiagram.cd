@@ -1,179 +1,169 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Store.Core.Models.Users.Decorator" Collapsed="true">
-    <Position X="1.75" Y="1.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Users.Abstract.User" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAQA=</HashCode>
-      <FileName>Models\Users\Decorator.cs</FileName>
+      <HashCode>AAACAAAAACAAAAAgAQAAIAEAgCAAAAAGAAAAAgAAAgA=</HashCode>
+      <FileName>Models\Users\Abstract\User.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Store.Core.Models.Users.User" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAgAQAAAAEAgAAAAAAGAAAAAgAAAgA=</HashCode>
-      <FileName>Models\Users\User.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Store.Core.Models.Users.Customer" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
-    <InheritanceLine Type="Store.Core.Models.Users.Decorator" ManuallyRouted="true">
-      <Path>
-        <Point X="2.5" Y="2.062" />
-        <Point X="2.5" Y="2.375" />
-        <Point X="1.25" Y="2.375" />
-        <Point X="1.25" Y="2.5" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Users\Customer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Store.Core.Models.Users.Accounter" Collapsed="true">
-    <Position X="0.5" Y="3.75" Width="1.5" />
-    <InheritanceLine Type="Store.Core.Models.Users.Decorator" FixedToPoint="true">
-      <Path>
-        <Point X="2.5" Y="2.062" />
-        <Point X="2.5" Y="4.125" />
-        <Point X="2" Y="4.125" />
-      </Path>
-    </InheritanceLine>
-    <AssociationLine Name="Customer" Type="Store.Core.Models.Users.Customer" FixedFromPoint="true">
-      <Path>
-        <Point X="1.188" Y="3.75" />
-        <Point X="1.188" Y="3.191" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Users\Accounter.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Customer" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Store.Core.Models.Users.Manager" Collapsed="true">
-    <Position X="0.5" Y="5" Width="1.5" />
-    <InheritanceLine Type="Store.Core.Models.Users.Decorator" FixedToPoint="true">
-      <Path>
-        <Point X="2.5" Y="2.062" />
-        <Point X="2.5" Y="5.5" />
-        <Point X="2" Y="5.5" />
-      </Path>
-    </InheritanceLine>
-    <AssociationLine Name="Accounter" Type="Store.Core.Models.Users.Accounter" FixedFromPoint="true">
-      <Path>
-        <Point X="1.188" Y="5" />
-        <Point X="1.188" Y="4.441" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>Models\Users\Manager.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Accounter" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Store.Core.Models.MainMenu" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Menus.MainMenu" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\MainMenu.cs</FileName>
+      <FileName>Models\Menus\MainMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Store.Core.Models.LoginMenu" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Menus.LoginMenu" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\LoginMenu.cs</FileName>
+      <FileName>Models\Menus\LoginMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Store.Core.Models.RegisterMenu" Collapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Menus.RegisterMenu" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\RegisterMenu.cs</FileName>
+      <FileName>Models\Menus\RegisterMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Store.Core.Models.StoreMenu" Collapsed="true">
-    <Position X="7" Y="3.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Menus.StoreMenu" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAgAAAAgAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\StoreMenu.cs</FileName>
+      <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAABAAAAAA=</HashCode>
+      <FileName>Models\Menus\StoreMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Store.Core.Models.CartMenu" Collapsed="true">
-    <Position X="7" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\CartMenu.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Store.Core.Models.PaymentMenu" Collapsed="true">
-    <Position X="7" Y="5.5" Width="1.5" />
+  <Class Name="Store.Core.Models.Menus.CartMenu" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Models\PaymentMenu.cs</FileName>
+      <FileName>Models\Menus\CartMenu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Core.Models.Menus.PaymentMenu" Collapsed="true">
+    <Position X="3.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Menus\PaymentMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Store.Core.Infrastructure.Constants.Constants" Collapsed="true">
-    <Position X="2.5" Y="8.25" Width="1.5" />
+    <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Infrastructure\Constants\Constants.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Store.Core.Infrastructure.Utils.Validator" Collapsed="true">
-    <Position X="4.5" Y="8.25" Width="1.5" />
+    <Position X="2.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAQAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAQAA=</HashCode>
       <FileName>Infrastructure\Utils\Validator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Store.Core.Models.FlatFileStorage" Collapsed="true">
-    <Position X="12.25" Y="1.5" Width="1.5" />
+  <Class Name="Store.Core.Models.FileStorage" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\FlatFileStorage.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAEAAAAFAAAA=</HashCode>
+      <FileName>Models\FileStorage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Struct Name="Store.Core.Models.Common.Item" Collapsed="true">
-    <Position X="0.5" Y="8.25" Width="1.5" />
+  <Class Name="Store.Core.Models.Products.Abstract.Product" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAQAAAAAEAAAAAAQBQAAEAUAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Item.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAQAAAAEIAAAACAAgAAAAgA=</HashCode>
+      <FileName>Models\Products\Abstract\Product.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Core.Models.Products.Abstract.Consumable" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Abstract\Consumable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Core.Models.Products.Dairy" Collapsed="true">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Dairy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Core.Models.Users.Admin" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Users\Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Store.Core.Models.Wallet" Collapsed="true">
+    <Position X="4.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAIAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Models\Wallet.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="Store.Core.Contracts.IUser" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAACAAAAAAAQAAAAAAgCAAAAAGAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IUser.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Store.Core.Contracts.IMenu" Collapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IMenu.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Store.Core.Contracts.IDataStorage" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAAAAAAEAAAA=</HashCode>
       <FileName>Contracts\IDataStorage.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Store.Core.Contracts.IProduct" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAAgAAAAAA=</HashCode>
+      <FileName>Contracts\IProduct.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Core.Contracts.IConsumable" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IConsumable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Core.Contracts.IDairy" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IDairy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Store.Core.Infrastructure.Enumerations.StateType" Collapsed="true">
+    <Position X="6.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAAAAAAEIAAAAAAAAAAASgJABAAAAAAAQAAgAAAA=</HashCode>
+      <FileName>Infrastructure\Enumerations\StateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

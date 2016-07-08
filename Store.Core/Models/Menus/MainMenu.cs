@@ -1,4 +1,4 @@
-﻿namespace Store.Core.Models
+﻿namespace Store.Core.Models.Menus
 {
     using Contracts;
     using System;

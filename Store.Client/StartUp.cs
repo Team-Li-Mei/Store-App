@@ -6,11 +6,14 @@
 
 namespace Store.Client
 {
+    using Core.Contracts;
     using Core.Infrastructure.Constants;
     using Core.Infrastructure.Enumerations;
     using Core.Infrastructure.Utils;
     using Core.Models;
-    using Core.Models.Common;
+    using Core.Models.Menus;
+    using Core.Models.Products;
+    using Core.Models.Users;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -28,9 +31,9 @@ namespace Store.Client
             Console.OutputEncoding = Encoding.UTF8;
             Console.SetWindowSize(Constants.consoleWindowWidth, Constants.consoleWindowHeight);
 
-            var collection = new List<Item>();
-            collection.Add(new Item("Apples", 22.5m, DateTime.Now, 245));
-            collection.Add(new Item("Pears", 35.5m, DateTime.Now, 50));
+            var collection = new List<IProduct>();
+            collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 245, 32.1));
+            collection.Add(new Dairy("Yougurt", 35.5m, DateTime.Now, 50, 5));
            
             string username = null;
             string password = null;
@@ -85,7 +88,12 @@ namespace Store.Client
                         Validator.CheckIfStringIsNullOrEmpty(username);
                         Validator.CheckIfStringIsNullOrEmpty(password);
                         Validator.CheckIfStringIsNullOrEmpty(email);
+
                         //Write to file
+                        var userContext = new FileStorage("Users");
+                        userContext.Write(new Admin(username, password, email).ToString());
+
+                        //Switch state
                         state = StateType.StoreMenu;
                         break;
                     default:

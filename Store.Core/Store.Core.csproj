@@ -44,29 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IConsumable.cs" />
+    <Compile Include="Contracts\IDataStorage.cs" />
     <Compile Include="Contracts\IMenu.cs" />
+    <Compile Include="Contracts\IProduct.cs" />
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="Infrastructure\Constants\Constants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
-    <Compile Include="Models\CartMenu.cs" />
+    <Compile Include="Models\Menus\CartMenu.cs" />
     <Compile Include="Infrastructure\Utils\Validator.cs" />
-    <Compile Include="Models\LoginMenu.cs" />
-    <Compile Include="Models\MainMenu.cs" />
-    <Compile Include="Models\PaymentMenu.cs" />
-    <Compile Include="Models\RegisterMenu.cs" />
-    <Compile Include="Models\StoreMenu.cs" />
-    <Compile Include="Models\Users\Accounter.cs" />
-    <Compile Include="Models\Users\Customer.cs" />
-    <Compile Include="Models\Users\Decorator.cs" />
-    <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\Users\Manager.cs" />
-    <Compile Include="Models\Users\User.cs" />
+    <Compile Include="Models\Products\Abstract\Consumable.cs" />
+    <Compile Include="Models\Products\Dairy.cs" />
+    <Compile Include="Models\FileStorage.cs" />
+    <Compile Include="Contracts\IDairy.cs" />
+    <Compile Include="Models\Menus\LoginMenu.cs" />
+    <Compile Include="Models\Menus\MainMenu.cs" />
+    <Compile Include="Models\Menus\PaymentMenu.cs" />
+    <Compile Include="Models\Menus\RegisterMenu.cs" />
+    <Compile Include="Models\Menus\StoreMenu.cs" />
+    <Compile Include="Models\Products\Abstract\Product.cs" />
+    <Compile Include="Models\Users\Admin.cs" />
+    <Compile Include="Models\Users\Abstract\User.cs" />
+    <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\Exceptions\" />
-    <Folder Include="Models\Common\Abstract\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

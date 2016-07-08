@@ -1,27 +1,26 @@
-﻿namespace Store.Core.Models
+﻿namespace Store.Core.Models.Menus
 {
     using System;
     using Contracts;
     using Infrastructure.Enumerations;
     using System.Text;
-    using Common;
     using System.Collections.Generic;
 
     public class StoreMenu : IMenu
     {
         private static StoreMenu instance;
 
-        private static List<Item> items;
+        private static List<IProduct> products;
 
-        private StoreMenu(List<Item> setItems)
+        private StoreMenu(List<IProduct> setProducts)
         {
-            items = setItems;
+            products = setProducts;
         }
 
-        public static StoreMenu Instance(List<Item> setItems)
+        public static StoreMenu Instance(List<IProduct> setProducts)
         {
             if (instance == null)
-                instance = new StoreMenu(setItems);
+                instance = new StoreMenu(setProducts);
             return instance;
         }
 
@@ -50,10 +49,10 @@
             strBuilder.AppendLine("+-------+--+----------------------------------------+-----------+---------------------+");
 
             var counter = 0;
-            foreach (var item in items)
+            foreach (var product in products)
             {
                 counter += 1;
-                strBuilder.AppendLine($"|{item.Count,7}|{counter,2}|{item.Name,40}|{item.Price,11}|{item.ExpirationDate,21}|");
+                strBuilder.AppendLine($"|{product.Quantity,7}|{counter,2}|{product.Name,40}|{product.PricePerQuantity,11}|{String.Format(product is IConsumable ? (product as IConsumable).ExpirationDate.ToString() : "[Non-consumable]"),21}|");
                 strBuilder.AppendLine("+-------+--+----------------------------------------+-----------+---------------------+");
             }
 

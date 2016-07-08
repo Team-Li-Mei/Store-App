@@ -8,12 +8,12 @@
     /// <summary>
     /// Not Tested!
     /// </summary>
-    public class FlatFileStorage : IDataStorage
+    public class FileStorage : IDataStorage
     {
         private string fileName;
         private string filePath;
 
-        public FlatFileStorage(string setFileName)
+        public FileStorage(string setFileName)
         {
             //Assign FileName
             this.FileName = setFileName;
@@ -46,9 +46,17 @@
             }
         }
 
+        public string Read()
+        {
+            using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open), Encoding.UTF8))
+            {
+                return strReader.ReadToEnd();
+            }
+        }
+
         public void Write(string text)
         {
-            using (var strWriter = new StreamWriter(new FileStream(filePath,FileMode.Open), Encoding.UTF8)) 
+            using (var strWriter = new StreamWriter(new FileStream(filePath, FileMode.Open), Encoding.UTF8))
             {
                 strWriter.WriteLine(text);
             }

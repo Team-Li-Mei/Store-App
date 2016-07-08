@@ -1,18 +1,19 @@
-﻿namespace Store.Core.Models.Users
+﻿namespace Store.Core.Models.Users.Abstract
 {
     using Contracts;
     using System;
-    using Common;
 
     /// <summary>
     /// Concrete Component
     /// </summary>
-    public class User : IUser
+    public abstract class User : IUser
     {
         private string username;
         private string password;
         private string email;
         private string id;
+
+        private Wallet wallet;
 
         public User(string setUsername, string setPassword, string setEmail)
         {
@@ -20,6 +21,7 @@
             this.Username = setUsername;
             this.Password = setPassword;
             this.Email = setEmail;
+            this.wallet = new Wallet(0);
         }
 
         public string Id
@@ -47,7 +49,6 @@
             {
                 this.password = value; //ToDo validate
             }
-
         }
 
         public string Username
@@ -57,17 +58,18 @@
             {
                 this.username = value; //ToDo validate
             }
-
         }
 
-        public void AddItem(Item item)
+        public Wallet Wallet { get { return this.wallet; } set { this.wallet = value; } }
+
+        public void AddItem(IProduct product)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(product);
         }
 
-        public void RemoveItem(Item item)
+        public void RemoveItem(IProduct product)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(product);
         }
     }
 }
