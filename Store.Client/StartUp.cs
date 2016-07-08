@@ -91,6 +91,7 @@ namespace Store.Client
 
                         //Write to file
                         var userContext = DataStorageFactory.CreateDbContext("Users");
+
                         //not good using new
                         userContext.Write(new Admin(username, password, email).ToString());
 

@@ -103,7 +103,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Store.Core.Models.Users.Admin" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Users\Admin.cs</FileName>

@@ -7,7 +7,7 @@ namespace Store.Core.Contracts
     /// </summary>
     public interface IUser
     {
-        string Id { get; }
+        int Id { get; }
 
         string Email { get; }
 

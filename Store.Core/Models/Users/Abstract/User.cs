@@ -2,6 +2,7 @@
 {
     using Contracts;
     using System;
+    using System.Text;
 
     /// <summary>
     /// Concrete Component
@@ -11,26 +12,22 @@
         private string username;
         private string password;
         private string email;
-        private string id;
+        private static int id = 0;
 
         private Wallet wallet;
 
         public User(string setUsername, string setPassword, string setEmail)
         {
-            this.Id = new Guid().ToString();
+            id++;
             this.Username = setUsername;
             this.Password = setPassword;
             this.Email = setEmail;
             this.wallet = new Wallet(0);
         }
 
-        public string Id
+        public int Id
         {
-            get { return this.id; }
-            protected set
-            {
-                this.id = value; //ToDo validate
-            }
+            get { return id; }
         }
 
         public string Email
@@ -70,6 +67,13 @@
         public void RemoveItem(IProduct product)
         {
             Console.WriteLine(product);
+        }
+
+        public override string ToString()
+        {
+            var strBuilder = new StringBuilder();
+            strBuilder.Append($"{this.Id}|{this.Username}|{this.Password}|{this.Wallet}|{this.Email}");
+            return strBuilder.ToString();
         }
     }
 }

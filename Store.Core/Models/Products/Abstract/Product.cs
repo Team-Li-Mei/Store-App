@@ -22,7 +22,7 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Items id.
         /// </summary>
-        private readonly int id;
+        private static int id;
 
         /// <summary>
         /// Items price.
@@ -38,6 +38,7 @@ namespace Store.Core.Models.Products.Abstract
         /// <param name="setCount">Item count.</param>
         public Product(string setName, decimal setPicePerQuantity, double setQuantity)
         {
+            id++;
             //validate
             this.name = setName;
             this.pricePerQuantity = setPicePerQuantity;
@@ -47,7 +48,7 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Gets the current item id.
         /// </summary>
-        public int Id { get { return this.id; } }
+        public int Id { get { return id; } }
 
         /// <summary>
         /// Gets the current item quantity.
@@ -71,14 +72,7 @@ namespace Store.Core.Models.Products.Abstract
         public override string ToString()
         {
             var strBuilder = new StringBuilder();
-            strBuilder.AppendLine(new string('-', 20) + $"Item" + new string('-', 20));
-            strBuilder.AppendLine($"Name: {this.Name}");
-            strBuilder.AppendLine($"Price: ${this.PricePerQuantity:F2}");
-            if (this is IConsumable)
-            {
-                strBuilder.AppendLine($"Expiration date: {(this as IConsumable).ExpirationDate}");
-            }
-
+            strBuilder.Append($"{this.Id}|{this.Name}|{this.Quantity}|{this.PricePerQuantity}");
             return strBuilder.ToString();
         }
     }

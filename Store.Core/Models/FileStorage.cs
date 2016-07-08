@@ -6,7 +6,7 @@
     using System.Text;
 
     /// <summary>
-    /// Not Tested!
+    /// Not Tested Much!
     /// </summary>
     public class FileStorage : IDataStorage
     {
@@ -30,7 +30,11 @@
             private set { this.fileName = value; }
         }
 
-        public void Create() => File.Create(filePath).Close();
+        public void Create()
+        {
+            if (!File.Exists(filePath))
+                File.Create(filePath).Close();
+        }
 
         public void Delete() => File.Delete(filePath);
 
@@ -38,7 +42,7 @@
         {
             using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
-                for (int i = 0; i < id; i++)
+                for (int i = 0; i < id - 1; i++)
                 {
                     strReader.ReadLine();
                 }
@@ -46,7 +50,7 @@
             }
         }
 
-        public string Read()
+        public string ReadToEnd()
         {
             using (var strReader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read), Encoding.UTF8))
             {
@@ -56,7 +60,7 @@
 
         public void Write(string text)
         {
-            using (var strWriter = new StreamWriter(new FileStream(filePath, FileMode.Open, FileAccess.Write), Encoding.UTF8))
+            using (var strWriter = new StreamWriter(new FileStream(filePath, FileMode.Append, FileAccess.Write), Encoding.UTF8))
             {
                 strWriter.WriteLine(text);
             }
