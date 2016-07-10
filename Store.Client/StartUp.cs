@@ -10,6 +10,7 @@ namespace Store.Client
     using Core.Infrastructure.Constants;
     using Core.Infrastructure.Enumerations;
     using Core.Infrastructure.Utils;
+    using Core.Infrastructure.Events;
     using Core.Models;
     using Core.Models.Menus;
     using Core.Models.Products;
@@ -23,6 +24,10 @@ namespace Store.Client
     /// </summary>
     public class Startup
     {
+        public virtual void OnUserLoged(object source, EventArgs e)
+        {
+            Console.WriteLine("Welcome User");
+        }
         /// <summary>
         /// Main starting point of out program.
         /// </summary>
@@ -38,6 +43,7 @@ namespace Store.Client
             string username = null;
             string password = null;
             string email = null;
+            var loginEvent = new LoginEvents();
 
             StateType state = StateType.MainMenu;
             while (true)
@@ -97,6 +103,11 @@ namespace Store.Client
 
                         //Switch state
                         state = StateType.StoreMenu;
+                        break;
+                    case StateType.Login:
+                        //loginEvent.UserLoged += OnUserLoged;
+                        //loginEvent.OnUserLoged();
+                        //LoginEvents.OnUserLogin(typeof(Startup).Name, new EventArgs());
                         break;
                     default:
                         break;

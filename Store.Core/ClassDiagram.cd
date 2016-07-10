@@ -3,7 +3,7 @@
   <Class Name="Store.Core.Models.Users.Abstract.User" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAgAQAAIAEAgCAAAAAGAAAAAgAAAgA=</HashCode>
+      <HashCode>AAACAAAAACAAAAAkAQAAIAEAgCAAAAAGAAAAAgAAAgA=</HashCode>
       <FileName>Models\Users\Abstract\User.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -73,7 +73,7 @@
   <Class Name="Store.Core.Models.FileStorage" Collapsed="true">
     <Position X="12.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAEAAEAAAEAAAAFAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAgAAEAAEAAAEAAAAFAAAA=</HashCode>
       <FileName>Models\FileStorage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
