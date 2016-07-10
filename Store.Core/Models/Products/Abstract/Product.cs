@@ -8,6 +8,7 @@ namespace Store.Core.Models.Products.Abstract
 {
     using Contracts;
     using System.Text;
+    using System;
 
     /// <summary>
     /// Item base structure.
@@ -22,7 +23,7 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Items id.
         /// </summary>
-        private static int id;
+        private int id;
 
         /// <summary>
         /// Items price.
@@ -48,7 +49,18 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Gets the current item id.
         /// </summary>
-        public int Id { get { return id; } }
+        int IProduct.Id
+        {
+            get
+            {
+                return this.id;
+            }
+
+            set
+            {
+                this.id = value;
+            }
+        }
 
         /// <summary>
         /// Gets the current item quantity.
@@ -72,7 +84,7 @@ namespace Store.Core.Models.Products.Abstract
         public override string ToString()
         {
             var strBuilder = new StringBuilder();
-            strBuilder.Append($"{this.Id}|{this.Name}|{this.Quantity}|{this.PricePerQuantity}");
+            strBuilder.Append($"{this.id}|{this.Name}|{this.Quantity}|{this.PricePerQuantity}");
             return strBuilder.ToString();
         }
     }
