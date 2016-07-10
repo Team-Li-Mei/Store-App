@@ -5,7 +5,8 @@
     using Infrastructure.Enumerations;
     using System.Text;
     using System.Collections.Generic;
-
+    using Products.Abstract;
+    using System.Linq;
     public class StoreMenu : IMenu
     {
         private static StoreMenu instance;
@@ -64,15 +65,24 @@
         public StateType ParseKey(ConsoleKey key)
         {
             if (key == ConsoleKey.D1)
-
-                //command for buy
-                return StateType.EnterUsername;
+            {
+                Console.Clear();
+                Product wantedProduct = TakeProductID();
+                //product should be add to ones cart
+            }
             if (key == ConsoleKey.D2)
                 return StateType.CartMenu;
             if (key == ConsoleKey.D3)
                 return StateType.MainMenu;
 
             return StateType.NotSet;
+        }
+        private Product TakeProductID()
+        {
+            Console.WriteLine("Enter ID of the product you would like to add to your cart: ");
+            //validate (should be a number in range from 0 to all available products' count);
+            int productID = int.Parse(Console.ReadLine());
+            return products.FirstOrDefault(x => x.Id == productID) as Product;
         }
     }
 }
