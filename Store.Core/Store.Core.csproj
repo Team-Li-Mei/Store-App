@@ -51,6 +51,7 @@
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Infrastructure\Constants\Constants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
+    <Compile Include="Infrastructure\Exceptions\LiMeiExceptions.cs" />
     <Compile Include="Models\DataStorageFactory.cs" />
     <Compile Include="Models\Menus\CartMenu.cs" />
     <Compile Include="Infrastructure\Utils\Validator.cs" />
@@ -69,9 +70,7 @@
     <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
