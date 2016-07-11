@@ -116,6 +116,13 @@
       <FileName>Models\DataStorageFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Store.Core.Exceptions.LiMeiExceptions" Collapsed="true">
+    <Position X="1.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Exceptions\LiMeiExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="Store.Core.Models.Wallet" Collapsed="true">
     <Position X="4.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
