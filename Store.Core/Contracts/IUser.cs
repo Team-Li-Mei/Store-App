@@ -2,9 +2,6 @@
 
 namespace Store.Core.Contracts
 {
-    /// <summary>
-    /// Component
-    /// </summary>
     public interface IUser
     {
         int Id { get; }
@@ -12,6 +9,10 @@ namespace Store.Core.Contracts
         string Email { get; }
 
         string Password { get; }
+
+        string Firstname { get; }
+
+        string Lastname { get; }
 
         string Username { get; }
 

@@ -30,7 +30,7 @@ namespace Store.Client
         public static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Console.SetWindowSize(GeneralConstants.consoleWindowWidth, GeneralConstants.consoleWindowHeight);
+            Console.SetWindowSize(GeneralConstants.ConsoleWindowWidth, GeneralConstants.ConsoleWindowHeight);
 
             var collection = new List<IProduct>();
             collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 245, 32.1));

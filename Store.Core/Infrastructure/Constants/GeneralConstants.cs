@@ -7,6 +7,8 @@
         public const int MaxNameLength = 20;
         public const int MinPasswordLength = 5;
         public const int MaxPasswordLength = 30;
+        public const int MinEmailLength = 4;
+        public const int MaxEmaiLength = 30;
         public const int MinFileStorageNameLength = 4;
         public const int MaxFileStorageNameLength = 24;
 

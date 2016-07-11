@@ -1,6 +1,7 @@
 ﻿namespace Store.Core.Infrastructure.Utils
 {
     using System;
+    using System.Text.RegularExpressions;
 
     public static class Validator
     {
@@ -57,6 +58,16 @@
             if (expirationDate <= DateTime.Now)
             {
                 throw new IndexOutOfRangeException(message);
+            }
+        }
+
+        public static void CheckSymbols(string value, string pattern, string message)
+        {
+            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+            if (!regex.IsMatch(value))
+            {
+                throw new ArgumentException(message);
             }
         }
     }

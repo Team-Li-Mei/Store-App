@@ -14,7 +14,7 @@
         public FileStorage(string setFileName)
         {
             this.FileName = setFileName;
-            this.filePath = FileName + GeneralConstants.storageFileExtensionName;
+            this.filePath = FileName + GeneralConstants.StorageFileExtensionName;
             this.Create();
         }
 
@@ -23,8 +23,8 @@
             get { return this.fileName; }
             private set
             {
-                Validator.CheckIfStringLengthIsValid(value, GeneralConstants.FileStorageNameMaxLength, GeneralConstants.FileStorageNameMinLength,
-                string.Format(GeneralConstants.InvalidStringLength, "FileName", GeneralConstants.FileStorageNameMinLength, GeneralConstants.FileStorageNameMaxLength));
+                Validator.CheckIfStringLengthIsValid(value, GeneralConstants.MaxFileStorageNameLength, GeneralConstants.MinFileStorageNameLength,
+                string.Format(GeneralConstants.StringMustBeBetweenMinAndMax, "FileName", GeneralConstants.MinFileStorageNameLength, GeneralConstants.MaxFileStorageNameLength));
                 this.fileName = value;
             }
         }

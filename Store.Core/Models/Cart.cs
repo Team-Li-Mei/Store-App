@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using Infrastructure.Constants;
     
-    public class Cart
+    public class Cart : ICart
     {
         private IList<IProduct> products;
 
