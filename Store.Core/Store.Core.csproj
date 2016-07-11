@@ -49,9 +49,10 @@
     <Compile Include="Contracts\IMenu.cs" />
     <Compile Include="Contracts\IProduct.cs" />
     <Compile Include="Contracts\IUser.cs" />
-    <Compile Include="Infrastructure\Constants\Constants.cs" />
+    <Compile Include="Infrastructure\Constants\GeneralConstants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
     <Compile Include="Infrastructure\Events\LoginEvents.cs" />
+    <Compile Include="Infrastructure\Exceptions\CustomExceptions.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DataStorageFactory.cs" />
     <Compile Include="Models\Menus\CartMenu.cs" />
@@ -71,9 +72,7 @@
     <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>

@@ -35,6 +35,7 @@
             get { return this.email; }
             protected set
             {
+
                 this.email = value; //ToDo validate
             }
         }

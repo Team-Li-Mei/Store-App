@@ -24,17 +24,13 @@ namespace Store.Client
     /// </summary>
     public class Startup
     {
-        public virtual void OnUserLoged(object source, EventArgs e)
-        {
-            Console.WriteLine("Welcome User");
-        }
         /// <summary>
         /// Main starting point of out program.
         /// </summary>
         public static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Console.SetWindowSize(Constants.consoleWindowWidth, Constants.consoleWindowHeight);
+            Console.SetWindowSize(GeneralConstants.consoleWindowWidth, GeneralConstants.consoleWindowHeight);
 
             var collection = new List<IProduct>();
             collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 245, 32.1));

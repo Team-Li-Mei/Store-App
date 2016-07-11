@@ -1,35 +1,36 @@
 ﻿namespace Store.Core.Models.Carts
 {
-    using Store.Core.Contracts;
+    using Infrastructure.Utils;
+    using Contracts;
     using System.Collections.Generic;
-
+    using Infrastructure.Constants;
+    
     public class Cart
     {
-        private List<IProduct> cart;
+        private IList<IProduct> products;
 
         public Cart()
         {
-            this.cart = new List<IProduct>();
+            this.products = new List<IProduct>();
         }
 
-        public List<IProduct> Products
-        {
-            get
-            {
-                return new List<IProduct>(this.cart);
-            }
-        }
+        public IList<IProduct> Products { get { return this.products; } }
+
         public void AddToCart(IProduct product)
         {
-            this.cart.Add(product);
+            Validator.CheckIfNull(product, GeneralConstants.ProductCannotBeNull);
+            this.products.Add(product);
         }
+
         public bool RemoveFromCart(IProduct product)
         {
-            return this.cart.Remove(product);
+            Validator.CheckIfNull(product, GeneralConstants.ProductCannotBeNull);
+            return this.products.Remove(product);
         }
+
         public void ClearCart(IProduct product)
         {
-            this.cart.Clear();
+            this.products.Clear();
         }
     }
 }

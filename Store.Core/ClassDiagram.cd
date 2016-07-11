@@ -35,7 +35,7 @@
   <Class Name="Store.Core.Models.Menus.StoreMenu" Collapsed="true">
     <Position X="3.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAABAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAgAAAAAAAAAAAABAAAAAQAAABAAAAQA=</HashCode>
       <FileName>Models\Menus\StoreMenu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -81,7 +81,7 @@
   <Class Name="Store.Core.Models.Products.Abstract.Product" Collapsed="true">
     <Position X="8.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAEAAAAAAQAAAAEIAAAACAAgAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAARAAAAEIAAAACAAgAAAAgA=</HashCode>
       <FileName>Models\Products\Abstract\Product.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -117,7 +117,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Store.Core.Exceptions.LiMeiExceptions" Collapsed="true">
-    <Position X="1.25" Y="4" Width="1.5" />
+    <Position X="9.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Infrastructure\Exceptions\LiMeiExceptions.cs</FileName>

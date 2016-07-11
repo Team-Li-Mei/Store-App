@@ -7,11 +7,9 @@
     {
         static public IDataStorage CreateDbContext(string fileName)
         {
-            //ToDo get from .config file
-            string storageSystemName = Constants.dataStorageName;
+            string storageSystemName = GeneralConstants.DataStorageName;
 
             IDataStorage storageSystem = null;
-
             switch (storageSystemName)
             {
                 case "FileStorage":

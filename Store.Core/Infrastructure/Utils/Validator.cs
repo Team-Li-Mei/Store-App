@@ -4,6 +4,22 @@
 
     public static class Validator
     {
+        public static void CheckIfIntRange(int value, int min, int max, string message)
+        {
+            if (value < min || value > max)
+            {
+                throw new ArgumentException(message);
+            }
+        }
+
+        public static void CheckIfDecimalRange(decimal value, decimal min, decimal max, string message)
+        {
+            if (value < min || value > max)
+            {
+                throw new ArgumentException(message);
+            }
+        }
+
         public static void CheckIfNull(object obj, string message = null)
         {
             if (obj == null)
