@@ -13,6 +13,8 @@ namespace Store.Client
     using Core.Models.Menus;
     using Core.Models.Products;
     using Core.Models.Users;
+    using Store.Core.Infrastructure.Utils;
+
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -28,6 +30,8 @@ namespace Store.Client
         /// </summary>
         public static void Main()
         {
+            
+   
             Console.OutputEncoding = Encoding.UTF8;
             Console.SetWindowSize(GeneralConstants.ConsoleWindowWidth, GeneralConstants.ConsoleWindowHeight);
 
@@ -52,13 +56,17 @@ namespace Store.Client
             {
                 try
                 {
+                    
                     switch (state)
                     {
+                   
+                       
                         case StateType.MainMenu:
                             MainMenu.Instance.Draw();
                             state = MainMenu.Instance.ParseKey(Console.ReadKey().Key);
                             break;
                         case StateType.LoginMenu:
+                            //Validator.CheckIfPriceIsValid(-20);
                             LoginMenu.Instance.Draw();
                             state = LoginMenu.Instance.ParseKey(Console.ReadKey().Key);
                             break;
