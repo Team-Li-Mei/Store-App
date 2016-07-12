@@ -5,7 +5,6 @@
     using System.Collections.Generic;
     using Infrastructure.Constants;
     using System.Text;
-    using System;
 
     public class Cart : ICart
     {
@@ -36,26 +35,8 @@
         }
         public override string ToString()
         {
-            StringBuilder result = new StringBuilder();
-            result.AppendLine("                                                                                       ");
-            result.AppendLine("                -----------------------------------------------------                  ");
-            result.AppendLine("               |                                                     |                 ");
-            result.AppendLine("               |     *******        **        *****   *********      |                 ");
-            result.AppendLine("               |   *               *  *       *    *  *   *   *      |                 ");
-            result.AppendLine("               |   *              ******      *****       *          |                 ");
-            result.AppendLine("               |   *             *      *     **          *          |                 ");
-            result.AppendLine("               |   *            *        *    * *         *          |                ");
-            result.AppendLine("               |     *******   *          *   *  ***      *          |                 ");
-            result.AppendLine("               |                                                     |                 ");
-            result.AppendLine("                -----------------------------------------------------                  ");
-            result.AppendLine("                             S H O P P I N G - C A R T:                                ");
-            result.AppendLine("                                                                                       ");
-            result.AppendLine("                                 (products in cart)                                    ");
-            result.AppendLine("                                                                                       ");
-            result.AppendLine("+----------+--------------------------------------------------------------------------+");
-            result.AppendLine("|    Id    |                             Name                                         |");
-            result.AppendLine("+----------+--------------------------------------------------------------------------+");
-
+            var result = new StringBuilder();
+    
             var counter = 0;
             foreach (var product in this.Products)
             {

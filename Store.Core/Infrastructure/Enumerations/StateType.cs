@@ -15,6 +15,7 @@
         Login,
         Register,
         //Default value
-        NotSet
+        NotSet,
+        AddToCart
     }
 }
