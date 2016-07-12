@@ -36,6 +36,7 @@
         // User strings
         public const string InvalidSymbols = "{0} contains invalid symbols!";
         public const string UserToString = "Username: {0}, FullName: {1} {2}";
+        public const string InvalidUserType = "{0} does not exist in the current context.";
 
         // Null strings
         public const string UserCannotBeNull = "User cannot be null!";

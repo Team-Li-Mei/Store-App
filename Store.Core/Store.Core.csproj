@@ -49,6 +49,7 @@
     <Compile Include="Contracts\IDataStorage.cs" />
     <Compile Include="Contracts\IMenu.cs" />
     <Compile Include="Contracts\IProduct.cs" />
+    <Compile Include="Contracts\IStoreFactory.cs" />
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Infrastructure\Constants\GeneralConstants.cs" />
     <Compile Include="Infrastructure\Enumerations\StateType.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Models\Menus\RegisterMenu.cs" />
     <Compile Include="Models\Menus\StoreMenu.cs" />
     <Compile Include="Models\Products\Abstract\Product.cs" />
+    <Compile Include="Models\StoreFactory.cs" />
     <Compile Include="Models\Users\Admin.cs" />
     <Compile Include="Models\Users\Abstract\User.cs" />
     <Compile Include="Models\Wallet.cs" />
