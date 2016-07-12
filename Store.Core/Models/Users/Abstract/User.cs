@@ -30,6 +30,17 @@
             this.wallet = new Wallet();
             this.cart = new Cart();
         }
+        public ICart Cart
+        {
+            get
+            {
+                return this.cart;
+            }
+            protected set
+            {
+                this.cart = value;
+            }
+        }
 
         public int Id { get { return id; } }
 
@@ -104,14 +115,14 @@
 
         public Wallet Wallet { get { return this.wallet; } set { this.wallet = value; } }
 
-        public void AddItem(IProduct product)
+        public virtual void AddItem(IProduct product)
         {
-            Console.WriteLine(product);
+            this.Cart.AddToCart(product);
         }
 
-        public void RemoveItem(IProduct product)
+        public virtual void RemoveItem(IProduct product)
         {
-            Console.WriteLine(product);
+            this.Cart.RemoveFromCart(product);
         }
 
         public override string ToString()
