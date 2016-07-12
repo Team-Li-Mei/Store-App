@@ -43,7 +43,7 @@
             strBuilder.AppendLine("                -----------------------------------------------------                  ");
             strBuilder.AppendLine("                               S T O R E - M E N U:                                    ");
             strBuilder.AppendLine("                                                                                       ");
-            strBuilder.AppendLine("                                 1: Buy.                                               ");
+            strBuilder.AppendLine("                                 1: Add to Cart.                                       ");
             strBuilder.AppendLine("                                 2: Cart.                                              ");
             strBuilder.AppendLine("                                 3: Go Back.                                           ");
             strBuilder.AppendLine("                                                                                       ");
@@ -62,39 +62,17 @@
             Console.WriteLine(strBuilder.ToString());
         }
 
-
-
         public StateType ParseKey(ConsoleKey key)
         {
             if (key == ConsoleKey.D1)
-            {
-                Console.Clear();
-                Product wantedProduct = TakeProductID();
-                Admin currentUser = new Admin("JohnSon", "testpass", "testemail@abv.bg");
-                currentUser.AddItem(wantedProduct);
-                wantedProduct.Quantity --;
-                if (wantedProduct.Quantity == 0)
-                {
-                    products.Remove(wantedProduct);
-                }              
-            }
-
+                return StateType.AddToCart;
             if (key == ConsoleKey.D2)
-                Console.Clear();
-            Cart testCart = new Cart();
-            testCart.ToString();
-
+                return StateType.CartMenu;
             if (key == ConsoleKey.D3)
                 return StateType.MainMenu;
 
             return StateType.NotSet;
         }
-        private Product TakeProductID()
-        {
-            Console.WriteLine("Enter ID of the product you would like to add to your cart: ");
-            //validate (should be a number in range from 0 to all available products' count);
-            int productID = int.Parse(Console.ReadLine());
-            return products.FirstOrDefault(x => x.Id == productID) as Product;
-        }
+
     }
 }

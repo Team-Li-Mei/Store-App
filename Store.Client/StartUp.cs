@@ -18,6 +18,7 @@ namespace Store.Client
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Linq;
 
     /// <summary>
     /// The class StartUp holds the main starting point of our client.
@@ -49,6 +50,8 @@ namespace Store.Client
             IUser currentUser = null;
             IDataStorage userContext = null;
 
+            ConsoleKey key = ConsoleKey.NoName;
+
             while (true)
             {
                 try
@@ -76,8 +79,8 @@ namespace Store.Client
                             state = StoreMenu.Instance(collection).ParseKey(Console.ReadKey().Key);
                             break;
                         case StateType.CartMenu:
-                            CartMenu.Instance.Draw();
-                            state = CartMenu.Instance.ParseKey(Console.ReadKey().Key);
+                            CartMenu.Instance(currentUser.Cart).Draw();
+                            state = CartMenu.Instance(currentUser.Cart).ParseKey(Console.ReadKey().Key);
                             break;
                         case StateType.PaymentMenu:
                             PaymentMenu.Instance.Draw();
@@ -103,13 +106,36 @@ namespace Store.Client
                             state = StateType.StoreMenu;
                             break;
                         case StateType.Login:
+                            userContext = storeFactory.CreateDataStorage("Users");
+                            var text = (userContext as FileStorage).ReadToEnd().Split('\n');
+                            foreach (var str in text)
+                            {
+                                var temp = str.Split('|');
+                                if (temp[1] == username && temp[2] == password)
+                                {
+                                    currentUser = storeFactory.CreateUser(typeof(Admin), username, password, email);
+                                    break;
+                                }
+                            }
+
+                            if (currentUser == null)
+                                state = StateType.MainMenu;
+                            else
+                                state = StateType.StoreMenu;
+
                             break;
                         case StateType.NotSet:
+                            state = ChangeMenuTemp(Console.ReadKey().Key, state);
+                            break;
+                        case StateType.AddToCart:
+                            IProduct wantedProduct = TakeProductID(collection);
+                            wantedProduct.Quantity--;
+                            currentUser.Cart.AddToCart(wantedProduct);
 
-                            var key = Console.ReadKey().Key;
-                            if (key == ConsoleKey.Enter)
-                                state =  StateType.MainMenu;
+                            if (wantedProduct.Quantity == 0)
+                                collection.Remove(wantedProduct);
 
+                            state = ChangeMenuTemp(Console.ReadKey().Key, state);
                             break;
                         default:
                             break;
@@ -122,6 +148,22 @@ namespace Store.Client
                     Console.WriteLine(ex.Message);
                 }
             }
+        }
+
+        private static StateType ChangeMenuTemp(ConsoleKey key, StateType state)
+        {
+            if (key == ConsoleKey.Enter)
+                return StateType.MainMenu;
+            else
+                return state;
+        }
+
+        public static IProduct TakeProductID(IList<IProduct> products)
+        {
+            Console.WriteLine("Enter ID of the product you would like to add to your cart: ");
+            //validate (should be a number in range from 0 to all available products' count);
+            int productID = int.Parse(Console.ReadLine());
+            return products.FirstOrDefault(x => x.Id == productID);
         }
     }
 }

@@ -8,6 +8,6 @@
 
         decimal PricePerQuantity { get; }
 
-        double Quantity { get; }
+        double Quantity { get; set; }
     }
 }

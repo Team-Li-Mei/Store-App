@@ -4,7 +4,6 @@
     using Contracts;
     using Infrastructure.Constants;
     using Infrastructure.Utils;
-    using System;
     using System.Text;
 
     public abstract class User : IUser
@@ -30,17 +29,7 @@
             this.wallet = new Wallet();
             this.cart = new Cart();
         }
-        public ICart Cart
-        {
-            get
-            {
-                return this.cart;
-            }
-            protected set
-            {
-                this.cart = value;
-            }
-        }
+        public ICart Cart { get { return this.cart; } protected set { this.cart = value; } }
 
         public int Id { get { return id; } }
 
@@ -49,8 +38,8 @@
             get { return this.email; }
             private set
             {
-                Validator.CheckIfStringLengthIsValid(value, GeneralConstants.MaxEmaiLength, GeneralConstants.MaxEmaiLength,
-                    string.Format(GeneralConstants.StringMustBeBetweenMinAndMax, "Email", GeneralConstants.MinEmailLength, GeneralConstants.MaxEmaiLength));
+                Validator.CheckIfStringLengthIsValid(value, GeneralConstants.MaxEmailLength, GeneralConstants.MinEmailLength,
+                    string.Format(GeneralConstants.StringMustBeBetweenMinAndMax, "Email", GeneralConstants.MinEmailLength, GeneralConstants.MaxEmailLength));
                 Validator.CheckSymbols(value, GeneralConstants.EmailPattern,
                     string.Format(GeneralConstants.InvalidSymbols, "Email"));
 

@@ -18,6 +18,8 @@ namespace Store.Core.Contracts
 
         Wallet Wallet { get; }
 
+        ICart Cart { get; }
+
         void AddItem(IProduct product);
 
         void RemoveItem(IProduct product);

@@ -5,43 +5,50 @@
     using Infrastructure.Enumerations;
     using System.Text;
 
-
     public class CartMenu : IMenu
     {
         private static CartMenu instance;
 
-        private CartMenu() { }
+        private static ICart cart;
 
-        public static CartMenu Instance
+        private CartMenu(ICart setCart)
         {
-            get
-            {
-                if (instance == null)
-                    instance = new CartMenu();
-                return instance;
-            }
+            cart = setCart;
+        }
+
+        public static CartMenu Instance(ICart setCart)
+        {
+            if (instance == null)
+                instance = new CartMenu(setCart);
+            return instance;
         }
         public void Draw()
         {
             var strBuilder = new StringBuilder();
-
-            strBuilder.AppendLine("                                             ");
-            strBuilder.AppendLine(" ------------------------------------------- ");
-            strBuilder.AppendLine("|                                           |");
-            strBuilder.AppendLine("|   * * *        *        ****     *******  |");
-            strBuilder.AppendLine("|  *            * *       *   *       *     |");
-            strBuilder.AppendLine("|  *           * * *      *****       *     |");
-            strBuilder.AppendLine("|  *          *     *     *    *      *     |");
-            strBuilder.AppendLine("|   * * *    *       *    *     *     *     |");
-            strBuilder.AppendLine("|                                           |");
-            strBuilder.AppendLine(" ------------------------------------------- ");
-            strBuilder.AppendLine("                                             ");
-            strBuilder.AppendLine("             C A R T - M E N U:              ");
-            strBuilder.AppendLine("                                             ");
-            strBuilder.AppendLine("             1: .                            ");
-            strBuilder.AppendLine("             2: .                            ");
-            strBuilder.AppendLine("             3: Pay.                         ");
-            strBuilder.AppendLine("             4: Go back.                     ");
+            strBuilder.AppendLine("                                                                                       ");
+            strBuilder.AppendLine("                -----------------------------------------------------                  ");
+            strBuilder.AppendLine("               |                                                     |                 ");
+            strBuilder.AppendLine("               |     *******        **        *****   *********      |                 ");
+            strBuilder.AppendLine("               |   *               *  *       *    *  *   *   *      |                 ");
+            strBuilder.AppendLine("               |   *              ******      *****       *          |                 ");
+            strBuilder.AppendLine("               |   *             *      *     **          *          |                 ");
+            strBuilder.AppendLine("               |   *            *        *    * *         *          |                 ");
+            strBuilder.AppendLine("               |     *******   *          *   *  ***      *          |                 ");
+            strBuilder.AppendLine("               |                                                     |                 ");
+            strBuilder.AppendLine("                -----------------------------------------------------                  ");
+            strBuilder.AppendLine("                             S H O P P I N G - C A R T:                                ");
+            strBuilder.AppendLine("                                                                                       ");
+            strBuilder.AppendLine("                                   M E N U:                                            ");
+            strBuilder.AppendLine("                                                                                       ");
+            strBuilder.AppendLine("                                   1: .                                                ");
+            strBuilder.AppendLine("                                   2: .                                                ");
+            strBuilder.AppendLine("                                   3: Pay.                                             ");
+            strBuilder.AppendLine("                                   4: Go back.                                         ");
+            strBuilder.AppendLine("                                                                                       ");
+            strBuilder.AppendLine("+----------+--------------------------------------------------------------------------+");
+            strBuilder.AppendLine("|    Id    |                             Name                                         |");
+            strBuilder.AppendLine("+----------+--------------------------------------------------------------------------+");
+            strBuilder.AppendLine(cart.ToString());
 
             Console.WriteLine(strBuilder.ToString());
         }
