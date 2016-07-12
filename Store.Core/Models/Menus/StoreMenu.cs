@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using Products.Abstract;
     using System.Linq;
+    using Users;
     public class StoreMenu : IMenu
     {
         private static StoreMenu instance;
@@ -68,7 +69,13 @@
             {
                 Console.Clear();
                 Product wantedProduct = TakeProductID();
-                //product should be add to ones cart
+                Admin currentUser = new Admin("JohnSon", "testpass", "testemail@abv.bg");
+                currentUser.AddItem(wantedProduct);
+                wantedProduct.Quantity --;
+                if (wantedProduct.Quantity == 0)
+                {
+                    products.Remove(wantedProduct);
+                }              
             }
             if (key == ConsoleKey.D2)
                 return StateType.CartMenu;
