@@ -109,7 +109,7 @@
             this.Cart.AddToCart(product);
         }
 
-        public virtual void RemoveItem(IProduct product)
+        public void RemoveItem(IProduct product)
         {
             this.Cart.RemoveFromCart(product);
         }
