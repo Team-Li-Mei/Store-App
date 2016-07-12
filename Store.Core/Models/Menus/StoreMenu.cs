@@ -8,6 +8,7 @@
     using Products.Abstract;
     using System.Linq;
     using Users;
+    using Carts;
     public class StoreMenu : IMenu
     {
         private static StoreMenu instance;
@@ -77,8 +78,12 @@
                     products.Remove(wantedProduct);
                 }              
             }
+
             if (key == ConsoleKey.D2)
-                return StateType.CartMenu;
+                Console.Clear();
+            Cart testCart = new Cart();
+            testCart.ToString();
+
             if (key == ConsoleKey.D3)
                 return StateType.MainMenu;
 
