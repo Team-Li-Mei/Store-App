@@ -2,6 +2,7 @@
 {
     using System;
     using System.Text.RegularExpressions;
+    using Store.Core.Exceptions;
 
     public static class Validator
     {
@@ -57,7 +58,7 @@
         {
             if (price <= 0)
             {
-                throw new IndexOutOfRangeException(message);
+                throw new NegativPriceAplicationException(); ;
             }
         }
 
