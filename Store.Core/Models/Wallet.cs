@@ -4,6 +4,16 @@
     {
         private decimal balance;
 
+        public decimal Balance
+        {
+            get { return this.balance; }
+            private set
+            {
+                //validate
+                this.balance = value;
+            }
+        }
+
         public Wallet(decimal setMoneyAmmount)
         {
             //validate
