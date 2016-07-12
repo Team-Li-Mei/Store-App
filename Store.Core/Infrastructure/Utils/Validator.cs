@@ -21,6 +21,14 @@
             }
         }
 
+        public static void CheckIfDoubleRange(double value, double min, double max, string message)
+        {
+            if (value < min || value > max)
+            {
+                throw new ArgumentException(message);
+            }
+        }
+
         public static void CheckIfNull(object obj, string message = null)
         {
             if (obj == null)
@@ -72,3 +80,4 @@
         }
     }
 }
+

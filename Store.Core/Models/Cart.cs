@@ -6,6 +6,7 @@
     using Infrastructure.Constants;
     using System.Text;
     using System;
+
     public class Cart : ICart
     {
         private IList<IProduct> products;

@@ -8,7 +8,8 @@ namespace Store.Core.Models.Products.Abstract
 {
     using Contracts;
     using System.Text;
-    using System;
+    using Infrastructure.Utils;
+    using Infrastructure.Constants;
 
     /// <summary>
     /// Item base structure.
@@ -18,17 +19,19 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Items name.
         /// </summary>
-        private readonly string name;
+        private string name;
 
         /// <summary>
         /// Items id.
         /// </summary>
         private int id;
 
+        private double quantity;
+
         /// <summary>
         /// Items price.
         /// </summary>
-        private readonly decimal pricePerQuantity;
+        private decimal pricePerQuantity;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Item"/> struct.
@@ -65,17 +68,49 @@ namespace Store.Core.Models.Products.Abstract
         /// <summary>
         /// Gets the current item quantity.
         /// </summary>
-        public double Quantity { get; set; }
+        public double Quantity
+        {
+            get { return this.quantity; }
+            set
+            {
+                Validator.CheckIfDoubleRange(value, GeneralConstants.MinQuantity, GeneralConstants.MaxQuantity, string.Format(
+                    GeneralConstants.NumberMustBeBetweenMinAndMax, "Quantity", GeneralConstants.MinQuantity, GeneralConstants.MaxQuantity));
+
+                this.quantity = value;
+            }
+        }
 
         /// <summary>
         /// Gets the name of the item.
         /// </summary>
-        public string Name { get { return this.name; } }
+        public string Name
+        {
+            get { return this.name; }
+            private set
+            {
+                Validator.CheckIfStringIsNullOrEmpty(value, string.Format(GeneralConstants.ProductCannotBeNull));
+
+                Validator.CheckIfStringLengthIsValid(value, GeneralConstants.MaxNameLength, GeneralConstants.MinNameLength, string.Format(
+                    GeneralConstants.StringMustBeBetweenMinAndMax, "Name", GeneralConstants.MinNameLength, GeneralConstants.MaxNameLength));
+
+                this.name = value;
+            }
+        }
 
         /// <summary>
         /// Gets the price of the item/
         /// </summary>
-        public decimal PricePerQuantity { get { return this.pricePerQuantity; } }
+        public decimal PricePerQuantity
+        {
+            get { return this.pricePerQuantity; }
+            private set
+            {
+                Validator.CheckIfDecimalRange(value, GeneralConstants.MinPricePerQuantity, GeneralConstants.MaxPricePerQuantity, string.Format(
+                    GeneralConstants.NumberMustBeBetweenMinAndMax, "Price per quantity", GeneralConstants.MinPricePerQuantity, GeneralConstants.MaxPricePerQuantity));
+
+                this.pricePerQuantity = value;
+            }
+        }
 
         /// <summary>
         /// Replaces the behavior of the original ToString() method.

@@ -15,6 +15,10 @@
         // Numbers validation
         public const decimal MinPrice = 0.0m;
         public const decimal MaxPrice = 1000000.0m;
+        public const double MinQuantity = 0.0;
+        public const double MaxQuantity = 100.0;
+        public const decimal MinPricePerQuantity = 0.0m;
+        public const decimal MaxPricePerQuantity = 10000m;
 
         //Console settings
         public const int ConsoleWindowWidth = 90;

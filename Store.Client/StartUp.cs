@@ -32,7 +32,7 @@ namespace Store.Client
 
 #if DEBUG
             var collection = new List<IProduct>();
-            collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 245, 32.1));
+            collection.Add(new Dairy("Milk", 22.5m, DateTime.Now, 90, 32.1));
             collection.Add(new Dairy("Yougurt", 35.5m, DateTime.Now, 50, 5));
 #endif
             string username = null;
@@ -96,6 +96,13 @@ namespace Store.Client
                             break;
                         case StateType.Login:
                             break;
+                        case StateType.NotSet:
+
+                            var key = Console.ReadKey().Key;
+                            if (key == ConsoleKey.Enter)
+                                state =  StateType.MainMenu;
+
+                            break;
                         default:
                             break;
                     }
@@ -103,6 +110,7 @@ namespace Store.Client
                 }
                 catch (Exception ex)
                 {
+                    state = StateType.NotSet;
                     Console.WriteLine(ex.Message);
                 }
             }
